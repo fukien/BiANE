@@ -39,3 +39,29 @@ This file is the output of [metapath2vec++](https://ericdongyx.github.io/metapat
 ## Usage
 ### Installation
 Please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nmslib) for HNSW installation.
+
+### Model Training
+- AMiner:
+  ```
+  cd model
+  python gen_metapath.py --dataset ami --path_per_node 10 --path_length 81
+  ./code_metapath2vec/metapath2vec -train ../data/ami/metapath_ami.txt -output ../data/ami/emb_ami -pp 1 -size 128 -window 3 -negative 5 -threads 32
+  python train.py --dataset ami
+  ```
+- MovieLens
+  ```
+  cd model
+  python gen_metapath.py --dataset mvl --path_per_node 10 --path_length 81
+  ./code_metapath2vec/metapath2vec -train ../data/mvl/metapath_mvl.txt -output ../data/mvl/emb_mvl -pp 1 -size 128 -window 3 -negative 5 -threads 32
+  python train.py --dataset mvl --lambda_6 10 --lambda_9 10 --attr_dim_0_u 23 --attr_dim_0_v 18 --attr_dim_1 32 --attr_dim_2 64 --struc_dim_1 96 --struc_dim_2 64
+  ```
+
+### Link Prediction
+- AMiner:
+  ```
+  python link_prediction.py --dataset ami
+  ```
+- MovieLens
+  ```
+  python link_prediction.py --dataset mvl --attr_dim_0_u 23 --attr_dim_0_v 18 --attr_dim_1 32 --attr_dim_2 64 --struc_dim_1 96 --struc_dim_2 64
+  ```
