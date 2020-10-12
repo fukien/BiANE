@@ -14,13 +14,13 @@ Dataset should be processed as following:
 
 ```adjlist.txt: [node_itself neighbor_node_0 neighbor_node_1 nerighbor_node_2 neighbor_node_3 ... neighbor_node_k]```, the adjacency list for the graph (training set), each node is represented as its adjlist id;
 
-```train.tsv: [user_id, item_id, label]```, the dataset for training link prediction model (logistic regression model);
+```train.csv: [user_id, item_id]```, the dataset for embedding model training. It only contains true links of the inter-partition relations. We take them as positive cases and randomly sample negative cases during the training process to model the inter-partition proximity;
 
-```train.csv: [user_id, item_id]```, the dataset for training model;
+```valid.tsv: [user_id, item_id, label]```, the dataset for embedding model validation. It contains both positive cases and negative cases (randomly sampled) for inter-partition links. ```label``` indicates that whether the link relation is positive or not. The ratio of positives to negatives is 1:1;
 
-```valid.tsv: [user_id, item_id, label]```, the validation set;
+```train.tsv: [user_id, item_id, label]```, the dataset for training link prediction model (a logistic regression model). The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
 
-```test.tsv: [user_id, item_id, label]```, the test set;
+```test.tsv: [user_id, item_id, label]```, the test set for link prediction. The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
 
 ```user_attr.pkl: user_attr[user_id][:] ```, a matrix of user attributes;
 
@@ -35,6 +35,10 @@ emb.txt:
 ```
 , a matrix of high-order structure features for nodes. Each node is adjlist id. 
 This file is the output of [metapath2vec++](https://ericdongyx.github.io/metapath2vec/m2v.html).
+
+## Training Output
+```{dataset}_best_model.pkl```, the parameters of the trained AutoEncoders.
+
 
 ## Usage
 ### Installation

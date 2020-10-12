@@ -127,5 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/
 sftp-config.json
 *.tar.gz
