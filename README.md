@@ -16,11 +16,11 @@ Dataset should be processed as following:
 
 ```train.csv: [user_id, item_id]```, the dataset for embedding model training. It only contains true links of the inter-partition relations. We take them as positive cases and randomly sample negative cases during the training process to model the inter-partition proximity;
 
-```valid.tsv: [user_id, item_id, label]```, the dataset for embedding model validation. It contains both positive cases and negative cases (randomly sampled) for inter-partition links. ```label``` indicates that whether the link relation is positive or not. The ratio of positives to negatives is 1:1;
+```valid.tsv: [user_id, '\t', item_id, '\t', label]```, the dataset for embedding model validation. It contains both positive cases and negative cases (randomly sampled) for inter-partition links. ```label``` indicates that whether the link relation is positive or not. The ratio of positives to negatives is 1:1;
 
-```train.tsv: [user_id, item_id, label]```, the dataset for training link prediction model (a logistic regression model). The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
+```train.tsv: [user_id, '\t', item_id, '\t', label]```, the dataset for training link prediction model (a logistic regression model). The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
 
-```test.tsv: [user_id, item_id, label]```, the test set for link prediction. The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
+```test.tsv: [user_id, '\t', tem_id, '\t', label]```, the test set for link prediction. The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
 
 ```user_attr.pkl: user_attr[user_id][:] ```, a matrix of user attributes;
 
