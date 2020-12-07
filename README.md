@@ -22,9 +22,9 @@ Dataset should be processed as following:
 
 ```test.tsv: [user_id, '\t', tem_id, '\t', label]```, the test set for link prediction. The ```label``` information and positive to negative ratio is the same to ```valid.tsv```;
 
-```user_attr.pkl: user_attr[user_id][:] ```, a matrix of user attributes;
+```user_attr.pkl: user_attr[user_id][:] ```, a two-dimension ndarray matrix of user attributes, the row number (starts from 0) represents the respective user id.
 
-```item_attr.pkl: item_attr[item_id][:]```, a matrix of item attributes;
+```item_attr.pkl: item_attr[item_id][:]```, a two-dimension ndarray matrix of item attributes, the row number (starts from 0) represents the respective item id.
 
 ```
 emb.txt:
@@ -36,13 +36,17 @@ emb.txt:
 , a matrix of high-order structure features for nodes. Each node is adjlist id. 
 This file is the output of [metapath2vec++](https://ericdongyx.github.io/metapath2vec/m2v.html).
 
+### Note
+The above described dataset format is only required for the running python scripts in ```model```. One can change the dataset format as his/her wish if he/she considers to modify the data reading/writing code ```model```.
+
 ## Training Output
 ```{dataset}_best_model.pkl```, the parameters of the trained AutoEncoders.
 
 
 ## Usage
-### Installation
-Please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nmslib) for HNSW installation.
+### Requirements.
+nmslib 2.0.1+ (please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nmslib) for HNSW installation).  
+tensorflow 1.10-1.15
 
 ### Model Training
 - AMiner:
@@ -69,3 +73,6 @@ Please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nm
   ```
   python link_prediction.py --dataset mvl --attr_dim_0_u 23 --attr_dim_0_v 18 --attr_dim_1 32 --attr_dim_2 64 --struc_dim_1 96 --struc_dim_2 64
   ```
+  
+## Further Support
+If you have any enquiries, please contact huangwentao@u.nus.edu (Huang Wentao) for the further support.
