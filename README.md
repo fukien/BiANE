@@ -37,7 +37,7 @@ emb.txt:
 This file is the output of [metapath2vec++](https://ericdongyx.github.io/metapath2vec/m2v.html).
 
 ### Note
-The above described dataset format is only required for the running python scripts in ```model```. One can change the dataset format as his/her wish if he/she considers to modify the data reading/writing code ```model```.
+The above described dataset format is only required for the running python scripts in ```model```. One can change the dataset format as his/her wish if he/she considers to modify the data reading/writing code in ```model```.
 
 ## Training Output
 ```{dataset}_best_model.pkl```, the parameters of the trained AutoEncoders.
