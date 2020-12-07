@@ -45,7 +45,7 @@ The above described dataset format is only required for the running python scrip
 
 ## Usage
 ### Requirements.
-nmslib 2.0.1+ (please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nmslib) for HNSW installation).  
+nmslib 2.0.1+ (please refer to [Non-Metric Space Library (NMSLIB)](https://github.com/nmslib/nmslib) for HNSW installation)  
 tensorflow 1.10-1.15
 
 ### Model Training
