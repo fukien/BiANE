@@ -75,4 +75,21 @@ tensorflow 1.10-1.15
   ```
   
 ## Further Support
-If you have any enquiries, please contact huangwentao@u.nus.edu (Huang Wentao) for the further support.
+If you have any enquiries, please contact huangwentao@u.nus.edu (Huang Wentao) for the further support.  
+
+
+## Bibliography
+```
+@inproceedings{DBLP:conf/sigir/HuangL0FY20,
+  author       = {Wentao Huang and
+                  Yuchen Li and
+                  Yuan Fang and
+                  Ju Fan and
+                  Hongxia Yang},
+  title        = {BiANE: Bipartite Attributed Network Embedding},
+  booktitle    = {{SIGIR}},
+  pages        = {149--158},
+  publisher    = {{ACM}},
+  year         = {2020}
+}
+```
